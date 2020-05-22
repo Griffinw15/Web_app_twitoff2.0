@@ -2,7 +2,7 @@
 
 from flask import Blueprint, render_template, jsonify
 from web_app.models import db, User, Tweet, parse_records
-from web_app.services.twitter_service import twitter_api_client
+from web_app.services.twitter_service import twitter_api
 from web_app.services.basilica_service import basilica_api_client
 
 twitter_routes = Blueprint("twitter_routes", __name__)
@@ -11,7 +11,7 @@ twitter_routes = Blueprint("twitter_routes", __name__)
 def get_user(screen_name=None):
     print(screen_name)
 
-    api = twitter_api_client()
+    api = twitter_api()
 
     twitter_user = api.get_user(screen_name)
     statuses = api.user_timeline(screen_name, tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
