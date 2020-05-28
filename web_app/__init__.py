@@ -2,7 +2,7 @@
 
 from flask import Flask
 import os
-from dontenv import load_dotenv
+from dotenv import load_dotenv
 from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
 from web_app.routes.twitter_routes import twitter_routes
