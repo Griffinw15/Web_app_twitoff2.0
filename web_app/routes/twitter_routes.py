@@ -15,7 +15,7 @@ def get_user(screen_name=None):
 
     twitter_user = api.get_user(screen_name)
     statuses = api.user_timeline(screen_name, tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
-    print("STATUSES COUNT:", len(statuses))
+    #print("STATUSES COUNT:", len(statuses))
     #return jsonify({"user": user._json, "tweets": [s._json for s in statuses]})
 
     # get existing user from the db or initialize a new one:
